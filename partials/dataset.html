@@ -1,0 +1,27 @@
+<table class="table table-striped table-hover spi-dataset">
+    <thead>
+        <tr>
+            <th>Rank (SPI)</th>
+            <th>Country</th>
+            <th>Social Progress Index</th>
+            <th>Rank (BHN)</th>
+            <th>Basic Human Needs</th>
+            <th>Rank (FW)</th>
+            <th>Foundations of Well-being</th>
+            <th>Rank (O)</th>
+            <th>Opportunity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in spi | orderBy:'rank'">
+            <td>{{::item.rank}}</td>
+            <td><span class="label" ng-class="{'label-success': item.spi >= 70, 'label-warning': item.spi < 70 && item.spi >= 60, 'label-danger': item.spi < 60 }">{{::item.country}}</span></td>
+            <td>{{::item.spi}}</td>
+            <td>{{::item.rank_bhn}}</td>
+            <td>{{::item.bhn}}</td>
+            <td>{{::item.rank_fw}}</td>
+            <td>{{::item.fw}}</td>
+            <td>{{::item.rank_opp}}</td>
+            <td>{{::item.opp}}</td>
+        </tr>
+    </tbody>
